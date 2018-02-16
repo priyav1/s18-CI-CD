@@ -8,7 +8,7 @@ machine:
 checkout:
    post:
    # Sometimes git might ask for your identity and block the build. Add one valid account here:
-    - git config user.email "priya.venkateshaiah@west.cmu.edu"
+    - git config user.email "priya.venkateshaiah@sv.cmu.edu"
     - git config user.name "priyav1"
 
 # install dependencies
@@ -22,9 +22,3 @@ test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/mocha
     - grunt circleci
-
-deployment:
-   staging:
-     branch: master
-     heroku:
-       appname: fse-cmu-continuous-integration
